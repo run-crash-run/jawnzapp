@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.jawnz.app"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "microservice",
+    "baseName": "jawnzapp",
+    "packageName": "com.jawnz.app",
+    "packageFolder": "com/jawnz/app",
+    "serverPort": "8081",
+    "authenticationType": "oauth2",
+    "cacheProvider": "memcached",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": "elasticsearch",
+    "messageBroker": "kafka",
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "YTFkMjFlZjZiNmUyYzYzMmYxZjI4N2JjYmE1ODRiMTRiNzE1NThkNWQ2NTljN2QxYmVlMzYyMDAwNzExZjBmMGMyNTU0YTQ1ZjU5MzQ2MTIzMjcwZmI5ZDAxYmNiYmU5NTk1M2YzODYzODMwZDBmNzgyMTM3N2EwM2M3ZGRjMDk=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1605309591040,
+    "testFrameworks": ["gatling", "cucumber"],
+    "jhiPrefix": "jwn",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
