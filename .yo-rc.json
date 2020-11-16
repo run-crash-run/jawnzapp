@@ -33,6 +33,12 @@
     "clientPackageManager": "npm",
     "blueprints": [],
     "skipClient": true,
-    "skipUserManagement": true
+    "skipUserManagement": true,
+    "herokuAppName": "jawnzapp",
+    "herokuDeployType": "jar",
+    "herokuJavaVersion": "11",
+    "useOkta": false,
+    "oktaAdminLogin": "40rjlh22j8d@opayq.com",
+    "oktaAdminPassword": "M0nday!!"
   }
 }
