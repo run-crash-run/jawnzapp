@@ -1,0 +1,44 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "jawnzapp",
+  "relationships": [
+    {
+      "relationshipName": "product",
+      "otherEntityName": "product",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "n",
+      "otherEntityRelationshipName": "comment"
+    },
+    {
+      "relationshipName": "parent",
+      "otherEntityName": "comment",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "text,created",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "parent"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "text",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength", "pattern"],
+      "fieldValidateRulesMinlength": "1",
+      "fieldValidateRulesMaxlength": "200",
+      "fieldValidateRulesPattern": "^[a-zA-Z0-9]*$"
+    },
+    {
+      "fieldName": "created",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "dto": "no",
+  "searchEngine": "elasticsearch",
+  "service": "serviceImpl",
+  "entityTableName": "comment",
+  "databaseType": "mongodb",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "no",
+  "microserviceName": "jawnzapp"
+}
