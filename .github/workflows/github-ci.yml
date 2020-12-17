@@ -5,7 +5,7 @@ on:
     inputs:
       deploy:
         # Friendly description to be shown in the UI instead of 'name'
-        description: 'Should I deploy to Heroku (type 'yes'/'no' )'
+        description: 'Should I deploy to Heroku (type yes/no)'
         # Default value if no value is explicitly provided
         default: 'no'
         # Input has to be provided for the workflow to run
