@@ -34,7 +34,7 @@ jobs:
             - name: Package application
               run: ./mvnw -ntp package -Pprod -DskipTests
             - name: Deploy to Heroku
-              if: github.event.inputs.deploy-heroku == 'y'
+              if: github.event.inputs.deploy-heroku == 'y' || contains(github.event.head_commit.message, '[deploy]') 
               env:
                   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
               run: ./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=${{ github.event.inputs.appname }}
