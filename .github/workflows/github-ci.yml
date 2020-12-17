@@ -3,19 +3,13 @@ on:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-      deploy:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Should I deploy to Heroku (type yes/no)'
-        # Default value if no value is explicitly provided
-        default: 'no'
-        # Input has to be provided for the workflow to run
+      deploy-heroku:
+        description: 'Heroku Deploy (y/n)?'
+        default: 'n'
         required: true
       appname:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Name of Heroku app to deploy to'
-        # Default value if no value is explicitly provided
+        description: 'Name of Heroku app to deploy to (used if deploying to Heroku)'
         default: 'jawnzapp'
-        # Input has to be provided for the workflow to run
         required: false
   push:
   pull_request:
@@ -40,7 +34,7 @@ jobs:
             - name: Package application
               run: ./mvnw -ntp package -Pprod -DskipTests
             - name: Deploy to Heroku
-              if: github.event.inputs.deploy == 'yes' &&  github.event_name == 'push' && github.ref == 'refs/heads/master'
+              if: github.event.inputs.deploy-heroku == 'y'
               env:
                   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
               run: ./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=${{ github.event.inputs.appname }}
