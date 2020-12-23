@@ -39,6 +39,6 @@
     "herokuJavaVersion": "11",
     "useOkta": false,
     "oktaAdminLogin": "40rjlh22j8d@opayq.com",
-    "oktaAdminPassword": "M0nday!!"
+    "oktaAdminPassword": "Password1"
   }
 }
